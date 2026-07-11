@@ -43,12 +43,6 @@ const materialLines = [
   "Filamentos técnicos sob consulta",
 ];
 
-const heroHighlights = [
-  "Atendimento em Bauru-SP, Brasil e demandas internacionais sob viabilidade.",
-  "Execução a partir de arquivo, desenho ou especificação do cliente.",
-  "Filamentos comuns, técnicos e reforçados sob disponibilidade.",
-];
-
 const processSteps = [
   "Envie a ideia, medida, referência ou arquivo 3D para o Hermes.",
   "A Archon confirma viabilidade de impressão, material disponível, prazo e acabamento solicitado.",
@@ -72,7 +66,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#070707] text-[#f3efe6]">
       <section className="relative overflow-hidden border-b border-[#c99a4a]/25">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(201,154,74,0.2),transparent_34%),linear-gradient(115deg,rgba(255,255,255,0.05),transparent_42%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1.04fr_0.96fr] lg:px-10 lg:py-14">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-14">
           <header className="flex items-center justify-between gap-4 lg:col-span-2">
             <div>
               <p className="text-xs uppercase tracking-[0.42em] text-[#c99a4a]">
@@ -94,13 +88,13 @@ export default function Home() {
             <p className="mb-5 max-w-xl text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
               Toda Criação Tem Uma Origem
             </p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
               Ideias, protótipos e produtos físicos em impressão 3D.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d7d0c2]">
-              A Archon atende indústrias, empresas, construtoras e clientes
-              finais em Bauru-SP, em todo o território nacional e também em
-              demandas internacionais quando houver viabilidade de envio.
+              De Bauru-SP para clientes em todo o Brasil, a Archon transforma
+              arquivos, referências e projetos em peças impressas em 3D. Quando
+              a logística permitir, também atendemos demandas internacionais.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -118,32 +112,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="overflow-hidden border border-[#c99a4a]/25 bg-[#080807] shadow-2xl shadow-black/60">
-            <div className="relative min-h-[300px] bg-black/60 p-4 sm:min-h-[380px]">
-              <Image
-                src="/archon-brand-preview.png"
-                alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain p-3"
-              />
-            </div>
-            <div className="border-t border-[#c99a4a]/25 bg-[#100f0d] p-5 sm:p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c99a4a]">
-                Produção sob demanda
-              </p>
-              <div className="mt-4 grid gap-3">
-                {heroHighlights.map((highlight) => (
-                  <p
-                    key={highlight}
-                    className="border border-white/10 bg-black/25 px-4 py-3 text-sm leading-6 text-[#ded4c1]"
-                  >
-                    {highlight}
-                  </p>
-                ))}
-              </div>
-            </div>
+          <div className="relative min-h-[380px] overflow-hidden border border-[#c99a4a]/25 bg-[#080807] shadow-2xl shadow-black/60 sm:min-h-[520px]">
+            <Image
+              src="/archon-brand-preview.png"
+              alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className="object-contain p-4 sm:p-6"
+            />
           </div>
         </div>
       </section>
