@@ -10,13 +10,21 @@ const packageUrl = new URL("../package.json", import.meta.url);
 test("Archon page contains the core sales message and Hermes flow", async () => {
   const page = await readFile(pageUrl, "utf8");
 
-  assert.match(page, /Toda Criacao Tem Uma Origem/);
+  assert.match(page, /Toda Criação Tem Uma Origem/);
   assert.match(page, /Agente Hermes/);
   assert.match(page, /Bauru-SP/);
-  assert.match(page, /Industrias e empresas/);
+  assert.match(page, /Indústrias e empresas/);
   assert.match(page, /Construtoras e arquitetura/);
-  assert.match(page, /Publico geral/);
+  assert.match(page, /Público geral/);
   assert.match(page, /archon-brand-preview\.png/);
+  assert.match(page, /Escopo de atuação/);
+  assert.match(page, /Bureau de impressão 3D/);
+  assert.match(page, /responsabilidade profissional formal/);
+  assert.match(page, /território nacional/);
+  assert.match(page, /demandas internacionais/);
+  assert.match(page, /Filamentos comuns e técnicos/);
+  assert.match(page, /PETG-CF/);
+  assert.match(page, /PA-CF/);
 });
 
 test("starter preview code and dependency are removed", async () => {

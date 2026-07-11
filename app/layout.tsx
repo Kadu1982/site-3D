@@ -13,20 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Archon | Impressao 3D em Bauru-SP",
+  title: "Archon | Impressão 3D em Bauru-SP",
   description:
-    "Impressao 3D, prototipagem, maquetes e solucoes criativas com atendimento pelo Agente Hermes no WhatsApp.",
+    "Impressão 3D, prototipagem, maquetes e soluções criativas com atendimento pelo Agente Hermes no WhatsApp.",
   openGraph: {
-    title: "Archon | Toda Criacao Tem Uma Origem",
+    title: "Archon | Toda Criação Tem Uma Origem",
     description:
-      "Impressao 3D, prototipagem, maquetes e solucoes criativas em Bauru-SP.",
+      "Impressão 3D, prototipagem, maquetes e soluções criativas em Bauru-SP.",
     images: ["/archon-brand-preview.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archon | Toda Criacao Tem Uma Origem",
+    title: "Archon | Toda Criação Tem Uma Origem",
     description:
-      "Impressao 3D, prototipagem, maquetes e solucoes criativas em Bauru-SP.",
+      "Impressão 3D, prototipagem, maquetes e soluções criativas em Bauru-SP.",
     images: ["/archon-brand-preview.png"],
   },
   icons: {

@@ -2,42 +2,63 @@ import Image from "next/image";
 
 const businessSegments = [
   {
-    title: "Industrias e empresas",
-    text: "Prototipos, pecas tecnicas, suportes, gabaritos, reposicoes e solucoes sob medida para operacao, teste e apresentacao.",
+    title: "Indústrias e empresas",
+    text: "Protótipos, peças técnicas, suportes, gabaritos, reposições e soluções sob medida para operação, teste e apresentação.",
   },
   {
     title: "Construtoras e arquitetura",
-    text: "Maquetes fisicas em impressao 3D para estudos, apresentacoes comerciais e materializacao de projetos.",
+    text: "Maquetes físicas em impressão 3D para estudos, apresentações comerciais e materialização de projetos.",
   },
   {
-    title: "Publico geral",
-    text: "Modelos prontos e personalizados para decoracao, linha pet, gamer, culinaria, fotografia, convites e lembrancas.",
+    title: "Público geral",
+    text: "Modelos prontos e personalizados para decoração, linha pet, gamer, culinária, fotografia, convites e lembranças.",
   },
 ];
 
 const productLines = [
-  "Vasos e decoracao",
-  "Luminarias",
-  "Utensilios",
+  "Vasos e decoração",
+  "Luminárias",
+  "Utensílios",
   "Linha pet",
   "Gamer",
-  "Culinaria",
+  "Culinária",
   "Fotografia",
-  "Convites e lembrancas",
+  "Convites e lembranças",
   "Prototipagem",
   "Maquetes",
 ];
 
+const materialLines = [
+  "PLA",
+  "PLA Silk",
+  "PETG",
+  "ABS",
+  "ASA",
+  "TPU",
+  "Nylon / PA",
+  "Policarbonato / PC",
+  "PETG-CF",
+  "PA-CF",
+  "Filamentos com fibra de carbono",
+  "Filamentos técnicos sob consulta",
+];
+
 const processSteps = [
-  "Envie a ideia, medida, referencia ou arquivo 3D para o Hermes.",
-  "A Archon avalia material, acabamento, viabilidade e prazo.",
-  "A entrega e combinada conforme localidade e custo do envio.",
+  "Envie a ideia, medida, referência ou arquivo 3D para o Hermes.",
+  "A Archon confirma viabilidade de impressão, material disponível, prazo e acabamento solicitado.",
+  "A entrega é combinada conforme destino, tamanho, peso, urgência e modalidade de envio.",
+];
+
+const scopeRules = [
+  "Quando o cliente fornece o arquivo 3D, desenho técnico ou modelo digital, a Archon atua na preparação, fatiamento e execução da impressão.",
+  "A definição de material, requisitos mecânicos, dimensionamento, cálculo de esforço, encaixes críticos e aplicação final é responsabilidade do cliente ou do responsável técnico pelo projeto.",
+  "Quando houver necessidade de projeto técnico, laudo, ART ou responsabilidade profissional formal, esse escopo deverá ser tratado previamente com profissional habilitado.",
 ];
 
 export const metadata = {
-  title: "Archon | Impressao 3D, prototipagem e maquetes em Bauru-SP",
+  title: "Archon | Impressão 3D, prototipagem e maquetes em Bauru-SP",
   description:
-    "Impressao 3D para industrias, empresas, construtoras e publico geral. Pedidos e orcamentos atendidos pelo Agente Hermes no WhatsApp.",
+    "Impressão 3D para indústrias, empresas, construtoras e público geral. Pedidos e orçamentos atendidos pelo Agente Hermes no WhatsApp.",
 };
 
 export default function Home() {
@@ -52,28 +73,28 @@ export default function Home() {
                 Archon
               </p>
               <p className="mt-2 text-sm text-[#bdb5a7]">
-                Impressao 3D • Prototipagem • Solucoes criativas
+                Impressão 3D • Prototipagem • Soluções criativas
               </p>
             </div>
             <a
               className="hidden border border-[#c99a4a]/60 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f6d38b] transition hover:bg-[#c99a4a] hover:text-[#080808] sm:inline-flex"
               href="#pedido"
             >
-              Pedir orcamento
+              Pedir orçamento
             </a>
           </header>
 
           <div className="flex flex-col justify-center py-8 lg:py-16">
             <p className="mb-5 max-w-xl text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-              Toda Criacao Tem Uma Origem
+              Toda Criação Tem Uma Origem
             </p>
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-7xl">
-              Ideias, prototipos e produtos fisicos em impressao 3D.
+              Ideias, protótipos e produtos físicos em impressão 3D.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d7d0c2]">
-              A Archon atende industrias, empresas, construtoras e clientes
-              finais em Bauru-SP, associando tecnologia, escolha de material e
-              acabamento ao tipo certo de aplicacao.
+              A Archon atende indústrias, empresas, construtoras e clientes
+              finais em Bauru-SP, em todo o território nacional e também em
+              demandas internacionais quando houver viabilidade de envio.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -94,7 +115,7 @@ export default function Home() {
           <div className="relative min-h-[360px] overflow-hidden border border-[#c99a4a]/25 bg-black/45 shadow-2xl shadow-black/60">
             <Image
               src="/archon-brand-preview.png"
-              alt="Visualizacao da marca Archon com simbolo arquitetonico, compasso e camadas de impressao 3D"
+              alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -129,7 +150,7 @@ export default function Home() {
                 O que podemos fazer
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
-                Do tecnico ao cotidiano, a impressao certa para cada origem.
+                Do técnico ao cotidiano, uma impressão para cada origem.
               </h2>
             </div>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -149,24 +170,66 @@ export default function Home() {
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_1fr] lg:px-10">
         <div>
           <p className="text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-            Diferencial
+            Materiais
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
-            Material, tecnologia e finalidade precisam conversar.
+            Filamentos comuns e técnicos para diferentes tipos de impressão.
           </h2>
+          <p className="mt-6 text-lg leading-8 text-[#d7d0c2]">
+            A disponibilidade pode variar conforme estoque, fornecedor, cor,
+            diâmetro, aplicação e parâmetros de impressão. A Archon informa as
+            possibilidades de execução, mas a especificação técnica do material
+            para uso crítico deve vir do cliente ou do responsável pelo projeto.
+          </p>
         </div>
-        <div className="space-y-5 text-lg leading-8 text-[#d7d0c2]">
-          <p>
-            A Archon nao trata impressao 3D como produto unico. Uma peca
-            tecnica, uma maquete, uma luminaria e uma lembranca personalizada
-            pedem materiais, preenchimento, resistencia, acabamento e prazo
-            diferentes.
-          </p>
-          <p>
-            Essa diferenciacao e o centro da proposta: associar tecnologia de
-            impressao 3D ao uso real de cada pedido, evitando escolhas ruins de
-            material e expectativas vagas.
-          </p>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {materialLines.map((material) => (
+            <div
+              key={material}
+              className="border border-white/10 bg-white/[0.035] px-4 py-4 text-sm font-semibold text-[#eadfc9]"
+            >
+              {material}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-[#0d0c0b] px-5 py-16 sm:px-8 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
+              Escopo de atuação
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
+              Bureau de impressão 3D com responsabilidade delimitada.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[#d7d0c2]">
+              A Archon executa manufatura aditiva a partir de arquivos, desenhos
+              e especificações fornecidos pelo cliente. O serviço é de
+              fabricação da peça física, não de consultoria técnica, cálculo de
+              engenharia ou validação da aplicação final.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {scopeRules.map((rule, index) => (
+              <div
+                key={rule}
+                className="flex gap-4 border border-[#c99a4a]/20 bg-black/25 p-5"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#c99a4a] text-sm font-bold text-[#f0c46d]">
+                  {index + 1}
+                </span>
+                <p className="m-0 leading-7 text-[#d8cfbd]">{rule}</p>
+              </div>
+            ))}
+            <p className="text-sm leading-6 text-[#a99f8e]">
+              Observação: serviços que envolvam engenharia, projeto técnico,
+              cálculo estrutural, laudo, certificação, ART ou responsabilidade
+              profissional formal não fazem parte do escopo padrão de impressão
+              3D e devem ser contratados com profissional habilitado, quando
+              aplicável.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -183,9 +246,10 @@ export default function Home() {
               O Agente Hermes cuida do primeiro atendimento no WhatsApp.
             </h2>
             <p className="mt-6 text-lg leading-8">
-              O cliente envia a ideia, referencia ou arquivo. O Hermes organiza
-              o pedido para a Archon avaliar viabilidade, material, prazo e
-              forma de entrega.
+              O cliente envia a ideia, referência ou arquivo. O Hermes organiza
+              o pedido para a Archon confirmar viabilidade de impressão,
+              material disponível, prazo, acabamento solicitado e forma de
+              entrega.
             </p>
           </div>
           <div className="bg-[#090909] p-6 text-[#f3efe6]">
@@ -203,12 +267,13 @@ export default function Home() {
               className="mt-8 block border border-[#c99a4a] px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#f0c46d] transition hover:bg-[#c99a4a] hover:text-[#090909]"
               href="https://wa.me/"
             >
-              Inserir numero do Hermes
+              Inserir número do Hermes
             </a>
             <p className="mt-4 text-sm leading-6 text-[#a99f8e]">
-              Atendimento em Bauru-SP. Entregas combinadas caso a caso, porque
-              custos dos Correios e transportes variam conforme destino,
-              tamanho, peso e urgencia.
+              Atendimento em Bauru-SP, em todo o Brasil e, quando viável, também
+              para demandas internacionais. Entregas são combinadas caso a caso,
+              porque custos dos Correios, transportadoras e envios internacionais
+              variam conforme destino, tamanho, peso e urgência.
             </p>
           </div>
         </div>
