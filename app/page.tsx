@@ -43,6 +43,12 @@ const materialLines = [
   "Filamentos técnicos sob consulta",
 ];
 
+const heroHighlights = [
+  "Atendimento em Bauru-SP, Brasil e demandas internacionais sob viabilidade.",
+  "Execução a partir de arquivo, desenho ou especificação do cliente.",
+  "Filamentos comuns, técnicos e reforçados sob disponibilidade.",
+];
+
 const processSteps = [
   "Envie a ideia, medida, referência ou arquivo 3D para o Hermes.",
   "A Archon confirma viabilidade de impressão, material disponível, prazo e acabamento solicitado.",
@@ -112,15 +118,32 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[360px] overflow-hidden border border-[#c99a4a]/25 bg-black/45 shadow-2xl shadow-black/60">
-            <Image
-              src="/archon-brand-preview.png"
-              alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+          <div className="overflow-hidden border border-[#c99a4a]/25 bg-[#080807] shadow-2xl shadow-black/60">
+            <div className="relative min-h-[300px] bg-black/60 p-4 sm:min-h-[380px]">
+              <Image
+                src="/archon-brand-preview.png"
+                alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-contain p-3"
+              />
+            </div>
+            <div className="border-t border-[#c99a4a]/25 bg-[#100f0d] p-5 sm:p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#c99a4a]">
+                Produção sob demanda
+              </p>
+              <div className="mt-4 grid gap-3">
+                {heroHighlights.map((highlight) => (
+                  <p
+                    key={highlight}
+                    className="border border-white/10 bg-black/25 px-4 py-3 text-sm leading-6 text-[#ded4c1]"
+                  >
+                    {highlight}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

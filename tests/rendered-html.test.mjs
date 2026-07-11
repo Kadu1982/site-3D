@@ -25,6 +25,8 @@ test("Archon page contains the core sales message and Hermes flow", async () => 
   assert.match(page, /Filamentos comuns e técnicos/);
   assert.match(page, /PETG-CF/);
   assert.match(page, /PA-CF/);
+  assert.match(page, /Produção sob demanda/);
+  assert.match(page, /Execução a partir de arquivo/);
 });
 
 test("starter preview code and dependency are removed", async () => {
