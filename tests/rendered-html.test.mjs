@@ -71,17 +71,22 @@ test("catalog tabs component exposes real tab semantics and keyboard navigation"
   assert.match(tabs, /End/);
   assert.match(tabs, /src=\{product\.image\}/);
   assert.match(tabs, /Ver fonte/);
+  assert.match(tabs, /<img/);
 });
 
 test("site content module keeps the catalog copy centralized", async () => {
   const content = await readFile(siteContentUrl, "utf8");
 
   assert.match(content, /Casa e organiza\\u00e7\\u00e3o/);
+  assert.match(content, /Joias e acessorios/);
+  assert.match(content, /Banheiro e casa/);
   assert.match(content, /Porta-controles/);
   assert.match(content, /const catalogTabs = \[/);
   assert.match(content, /Pe\\u00e7as funcionais e reposi\\u00e7\\u00f5es/);
   assert.match(content, /Nomes de franquias, marcas e IPs de terceiros/);
   assert.match(content, /product-images\/casa-sapateira-modular\.png/);
+  assert.match(content, /product-images\/joias-porta-joias-brincos-colares\.png/);
+  assert.match(content, /product-images\/banheiro-prateleira-chuveiro\.png/);
   assert.match(content, /sourceUrl/);
 });
 
