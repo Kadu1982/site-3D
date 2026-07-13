@@ -5,6 +5,7 @@ import test from "node:test";
 const pageUrl = new URL("../app/page.tsx", import.meta.url);
 const tecnicoUrl = new URL("../app/tecnico/page.tsx", import.meta.url);
 const utilidadesUrl = new URL("../app/utilidades/page.tsx", import.meta.url);
+const tabsUrl = new URL("../app/catalog-tabs.tsx", import.meta.url);
 const siteContentUrl = new URL("../app/site-content.ts", import.meta.url);
 const layoutUrl = new URL("../app/layout.tsx", import.meta.url);
 const cssUrl = new URL("../app/globals.css", import.meta.url);
@@ -13,6 +14,7 @@ const textFiles = [
   pageUrl,
   tecnicoUrl,
   utilidadesUrl,
+  tabsUrl,
   layoutUrl,
   new URL("../outputs/archon-home.html", import.meta.url),
   new URL("../outputs/archon-tecnico.html", import.meta.url),
@@ -23,11 +25,11 @@ test("home routes visitors into technical and utility flows", async () => {
   const page = await readFile(pageUrl, "utf8");
 
   assert.match(page, /Catalogo de impressao 3D pronto para vender/);
-  assert.match(page, /\/tecnico/);
   assert.match(page, /\/utilidades/);
+  assert.match(page, /#catalogo/);
+  assert.match(page, /CatalogTabs/);
+  assert.match(page, /catalogTabs\.map/);
   assert.match(page, /Ver utilidades/);
-  assert.match(page, /Ver linha tecnica/);
-  assert.match(page, /featuredCollections\.map/);
 });
 
 test("technical page contains the core sales message and Hermes flow", async () => {
@@ -50,8 +52,23 @@ test("utilities page keeps the simple customer flow separate", async () => {
   assert.match(page, /Sem complicacao/);
   assert.match(page, /Linha modular/);
   assert.match(page, /Produtos em destaque/);
-  assert.match(page, /Pedidos via WhatsApp/);
-  assert.match(page, /featuredProducts\.map/);
+  assert.match(page, /CatalogTabs/);
+  assert.match(page, /compact/);
+  assert.match(page, /catalogTabs\[0\]\?\.products\.slice/);
+});
+
+test("catalog tabs component exposes real tab semantics and keyboard navigation", async () => {
+  const tabs = await readFile(tabsUrl, "utf8");
+
+  assert.match(tabs, /role="tablist"/);
+  assert.match(tabs, /role="tab"/);
+  assert.match(tabs, /role="tabpanel"/);
+  assert.match(tabs, /aria-controls/);
+  assert.match(tabs, /tabIndex=\{selected \? 0 : -1\}/);
+  assert.match(tabs, /ArrowRight/);
+  assert.match(tabs, /ArrowLeft/);
+  assert.match(tabs, /Home/);
+  assert.match(tabs, /End/);
 });
 
 test("site content module keeps the catalog copy centralized", async () => {
@@ -59,6 +76,7 @@ test("site content module keeps the catalog copy centralized", async () => {
 
   assert.match(content, /Casa e organiza\\u00e7\\u00e3o/);
   assert.match(content, /Porta-controles/);
+  assert.match(content, /const catalogTabs = \[/);
   assert.match(content, /Pe\\u00e7as funcionais e reposi\\u00e7\\u00f5es/);
   assert.match(content, /Nomes de franquias, marcas e IPs de terceiros/);
 });

@@ -29,42 +29,106 @@ export const featuredCollections = [
   },
 ];
 
-export const featuredProducts = [
+export const catalogTabs = [
   {
-    title: "Lumin\u00e1ria fantasia com torre",
-    category: "Decora\u00e7\u00e3o",
-    description:
-      "Pe\u00e7a de destaque para banner, vitrine e cole\u00e7\u00e3o tem\u00e1tica sem depender de copy longa.",
+    id: "casa-organizacao",
+    label: "Casa e organizacao",
+    eyebrow: "Casa e organizacao",
+    title: "Organizacao limpa e visualmente forte.",
+    summary:
+      "Sapateiras, caixas modulares, organizadores de gaveta e solucoes de mesa com leitura imediata para o comprador.",
+    products: [
+      {
+        title: "Sapateira modular ajustavel",
+        description:
+          "Peca modular com argumento de tamanho, utilidade e customizacao.",
+      },
+      {
+        title: "Suporte para tiaras e acessorios",
+        description:
+          "Categoria simples de explicar, facil de fotografar e boa para presente.",
+      },
+      {
+        title: "Organizador de gaveta modular",
+        description:
+          "Boa opcao para linha de organizacao com venda por kit e modulo.",
+      },
+    ],
   },
   {
-    title: "Comedouro elevado para pets",
-    category: "Linha pet",
-    description:
-      "Produto funcional com leitura clara de benef\u00edcio e boa percep\u00e7\u00e3o de valor.",
+    id: "pets",
+    label: "Pets",
+    eyebrow: "Pets",
+    title: "Linha pet com utilidade real e compra por impulso.",
+    summary:
+      "Comedouros elevados, bebedouros, pecas para passeio, tosa e suporte pensados para rotina de tutor.",
+    products: [
+      {
+        title: "Comedouro elevado para pets",
+        description:
+          "Produto funcional com leitura clara de beneficio e boa percepcao de valor.",
+      },
+      {
+        title: "Organizador de tosa pet",
+        description:
+          "Nicho util para tutores e banho e tosa, com apelo pratico imediato.",
+      },
+      {
+        title: "Porta-sacos para passeio",
+        description:
+          "Item pequeno, utilitario e facil de vender em pacote com outros itens pet.",
+      },
+    ],
   },
   {
-    title: "Organizador de tosa pet",
-    category: "Linha pet",
-    description:
-      "Nicho \u00fatil para tutores e banho e tosa, com apelo pr\u00e1tico imediato.",
+    id: "fantasia-decoracao",
+    label: "Fantasia e decoracao",
+    eyebrow: "Fantasia e decoracao",
+    title: "Produtos de atmosfera para chamar atencao na vitrine.",
+    summary:
+      "Luminarias, tronos, torres e pecas tematicas para transformar uma pagina comum em catalogo de desejo.",
+    products: [
+      {
+        title: "Luminaria fantasia com torre",
+        description:
+          "Peca de destaque para banner, vitrine e colecao tematica sem depender de copy longa.",
+      },
+      {
+        title: "Porta-copos tematico",
+        description:
+          "Item pequeno, colecionavel e ideal para venda cruzada por cor ou colecao.",
+      },
+      {
+        title: "Torre decorativa",
+        description:
+          "Produto visual com boa presenca para pagina inicial e campanhas sazonais.",
+      },
+    ],
   },
   {
-    title: "Suporte para tiaras e acess\u00f3rios",
-    category: "Organiza\u00e7\u00e3o",
-    description:
-      "Categoria simples de explicar, f\u00e1cil de fotografar e boa para presente.",
-  },
-  {
-    title: "Sapateira modular ajust\u00e1vel",
-    category: "Casa e organiza\u00e7\u00e3o",
-    description:
-      "Pe\u00e7a modular com argumento de tamanho, utilidade e customiza\u00e7\u00e3o.",
-  },
-  {
-    title: "Porta-copos tem\u00e1tico",
-    category: "Mesa e lazer",
-    description:
-      "Item pequeno, colecion\u00e1vel e ideal para venda cruzada por cor ou cole\u00e7\u00e3o.",
+    id: "mesa-gaming",
+    label: "Mesa e gaming",
+    eyebrow: "Mesa e gaming",
+    title: "Acessorios que conversam com setup e presente geek.",
+    summary:
+      "Suportes de controle, headset, porta-copos e organizadores para mesa de trabalho ou jogo.",
+    products: [
+      {
+        title: "Suporte para controle",
+        description:
+          "Bom para demonstrar praticidade e apelo visual em setup de mesa.",
+      },
+      {
+        title: "Base para headset",
+        description:
+          "Produto de ticket medio e alta clareza de uso em escritorio ou setup gamer.",
+      },
+      {
+        title: "Organizador de mesa para cabos",
+        description:
+          "Ajuda a completar a colecao com item de utilidade e venda por kit.",
+      },
+    ],
   },
 ] as const;
 

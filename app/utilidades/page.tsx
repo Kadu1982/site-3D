@@ -1,4 +1,5 @@
-import { featuredProducts, utilityLines } from "../site-content";
+import { CatalogTabs } from "../catalog-tabs";
+import { catalogTabs, utilityLines } from "../site-content";
 
 export const metadata = {
   title: "Archon | Utilidades e Criativos",
@@ -36,13 +37,13 @@ export default function UtilidadesPage() {
                 Catalogo leve, bonito e pronto para gerar compra.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4d4033]">
-                Esta pagina foi desenhada para vender pecas de uso cotidiano, presentes e itens que nao exigem conversa tecnica longa. O foco e clareza, apelo visual e decisao rapida.
+                Esta pagina foi desenhada para vender pecas de uso cotidiano, presentes e itens que nao exigem conversa tecnica longa.
               </p>
               <a
-                href="#pedido"
+                href="#catalogo"
                 className="mt-8 inline-flex bg-[#c99a4a] px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-white"
               >
-                Pedir pelo WhatsApp
+                Ver catalogo
               </a>
             </div>
 
@@ -71,7 +72,7 @@ export default function UtilidadesPage() {
           <article>
             <h2 className="text-2xl font-black text-[#201915]">Linha modular</h2>
             <p className="mt-4 leading-7 text-[#4d4234]">
-              Voce pode trocar o mix de produtos sem mudar a estrutura da pagina, so os cards e a vitrine principal.
+              Voce pode trocar o mix de produtos sem mudar a estrutura da pagina, so as abas.
             </p>
           </article>
           <article>
@@ -82,6 +83,14 @@ export default function UtilidadesPage() {
           </article>
         </div>
       </section>
+
+      <CatalogTabs
+        accentLabel="Abas de produtos"
+        className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10"
+        compact
+        title="Navegue pelas abas e mostre apenas os produtos da categoria certa."
+        tabs={catalogTabs}
+      />
 
       <section className="border-y border-[#dccfb9] bg-[#f9f4eb] px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -94,13 +103,13 @@ export default function UtilidadesPage() {
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {featuredProducts.map((product) => (
+            {catalogTabs[0]?.products.slice(0, 3).map((product) => (
               <article
                 key={product.title}
                 className="border border-[#dccfb9] bg-white p-5 shadow-[0_10px_28px_rgba(64,48,28,0.05)]"
               >
                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8a6428]">
-                  {product.category}
+                  Casa e organizacao
                 </p>
                 <h3 className="mt-3 text-lg font-black text-[#201915]">
                   {product.title}
@@ -110,44 +119,6 @@ export default function UtilidadesPage() {
                 </p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="pedido" className="bg-[#f8f2e8] px-5 py-16 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.86fr_1.14fr]">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.34em] text-[#c99a4a]">
-              Pedidos via WhatsApp
-            </p>
-            <h2 className="mt-4 text-3xl font-black text-[#201915] sm:text-5xl">
-              Nossos agentes recebem a demanda e devolvem a direcao certa.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-[#4d4033]">
-              A pessoa nao precisa entender de impressao 3D. Ela so precisa saber o que quer vender ou mandar como ideia.
-            </p>
-          </div>
-          <div className="bg-white p-6 shadow-[0_10px_28px_rgba(64,48,28,0.05)]">
-            <ol className="space-y-4">
-              {[
-                "Enviar ideia, foto ou referencia.",
-                "Definir funcao, cor e faixa de preco.",
-                "Receber sugestao de producao e ajuste do catalogo.",
-              ].map((step, index) => (
-                <li key={step} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#c99a4a] bg-[#fff8ef] text-sm font-bold text-[#8a6428]">
-                    {index + 1}
-                  </span>
-                  <span className="pt-1 leading-7 text-[#4d4033]">{step}</span>
-                </li>
-              ))}
-            </ol>
-            <a
-              href="https://wa.me/"
-              className="mt-8 block border border-[#c99a4a] px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#8a6428] transition hover:bg-[#c99a4a] hover:text-white"
-            >
-              Inserir numero do Hermes
-            </a>
           </div>
         </div>
       </section>

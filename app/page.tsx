@@ -1,14 +1,10 @@
-import {
-  commercialSafetyNote,
-  featuredCollections,
-  featuredProducts,
-  orderFlow,
-} from "./site-content";
+import { CatalogTabs } from "./catalog-tabs";
+import { catalogTabs, commercialSafetyNote, orderFlow } from "./site-content";
 
 export const metadata = {
   title: "Archon | Catalogo de Impressao 3D",
   description:
-    "Molde de site para vender produtos de impressao 3D com colecoes, catalogo e chamadas comerciais claras.",
+    "Molde de site para vender produtos de impressao 3D com catalogo por categoria e chamadas comerciais claras.",
 };
 
 export default function Home() {
@@ -27,7 +23,7 @@ export default function Home() {
                 Archon
               </p>
               <p className="mt-2 text-sm text-[#6c5d4b]">
-                Catalogo de impressao 3D • vitrines de produto • molde reutilizavel
+                Catalogo de impressao 3D • vitrines de produto • abas funcionais
               </p>
             </div>
             <a
@@ -47,7 +43,7 @@ export default function Home() {
                 Catalogo de impressao 3D pronto para vender.
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-[#4d4033]">
-                Este projeto virou um molde: colecoes, cards e chamadas ja ficam organizados para voce publicar produtos de casa, pets, decoracao e setup sem refazer a estrutura toda vez.
+                Este projeto virou um molde: agora os produtos ficam agrupados em abas funcionais por categoria, para publicar sem refazer a estrutura toda vez.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
@@ -57,10 +53,10 @@ export default function Home() {
                   Ver utilidades
                 </a>
                 <a
-                  href="/tecnico"
+                  href="#catalogo"
                   className="border border-[#8d7d6a] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#201915] transition hover:border-[#c99a4a] hover:text-[#7a5c2c]"
                 >
-                  Ver linha tecnica
+                  Ver catalogo
                 </a>
               </div>
               <p className="mt-6 max-w-xl text-sm leading-6 text-[#7a6d5d]">
@@ -69,9 +65,9 @@ export default function Home() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {featuredCollections.map((collection) => (
+              {catalogTabs.map((collection) => (
                 <article
-                  key={collection.title}
+                  key={collection.id}
                   className="border border-[#d8c9b0] bg-white/75 p-5 shadow-[0_20px_50px_rgba(64,48,28,0.08)] backdrop-blur-[1px]"
                 >
                   <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#c99a4a]">
@@ -83,16 +79,6 @@ export default function Home() {
                   <p className="mt-3 text-sm leading-6 text-[#4d4033]">
                     {collection.summary}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {collection.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-[#d9c8ad] bg-[#fbf7f0] px-3 py-1.5 text-xs font-semibold text-[#5d4d39]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </article>
               ))}
             </div>
@@ -100,36 +86,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr]">
-          <div>
-            <p className="text-sm uppercase tracking-[0.34em] text-[#c99a4a]">
-              O que entra no catalogo
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-[#201915] sm:text-5xl">
-              Produto claro vende. Categoria clara vende mais rapido.
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
-            {featuredProducts.map((product) => (
-              <article
-                key={product.title}
-                className="border border-[#dccfb9] bg-white p-4 shadow-[0_14px_30px_rgba(64,48,28,0.06)]"
-              >
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#9a7842]">
-                  {product.category}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold text-[#201915]">
-                  {product.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-[#5e5144]">
-                  {product.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CatalogTabs
+        accentLabel="Abas de produtos"
+        className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10"
+        title="Escolha a categoria e veja os produtos certos em cada aba."
+        tabs={catalogTabs}
+      />
 
       <section className="border-y border-[#dccfb9] bg-[#f9f4eb] px-5 py-16 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.86fr_1.14fr]">
@@ -170,9 +132,9 @@ export default function Home() {
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
-          {featuredCollections.map((collection) => (
+          {catalogTabs.map((collection) => (
             <div
-              key={collection.eyebrow}
+              key={collection.id}
               className="border border-[#dccfb9] bg-white px-4 py-5 shadow-[0_10px_28px_rgba(64,48,28,0.05)]"
             >
               <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#c99a4a]">
