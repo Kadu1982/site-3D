@@ -78,8 +78,8 @@ test("starter preview code and dependency are removed", async () => {
 test("global styling uses the Archon premium palette", async () => {
   const css = await readFile(cssUrl, "utf8");
 
-  assert.match(css, /#070707/);
-  assert.match(css, /#c99a4a/);
+  assert.match(css, /#f6f1e8/);
+  assert.match(css, /#d3b37b/);
   assert.match(css, /scroll-behavior: smooth/);
   assert.match(css, /var\(--font-geist-sans\)/);
 });
