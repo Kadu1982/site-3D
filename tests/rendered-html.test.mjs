@@ -5,6 +5,14 @@ import test from "node:test";
 const pageUrl = new URL("../app/page.tsx", import.meta.url);
 const tecnicoUrl = new URL("../app/tecnico/page.tsx", import.meta.url);
 const utilidadesUrl = new URL("../app/utilidades/page.tsx", import.meta.url);
+const uploaderUrl = new URL(
+  "../app/catalog-image-uploader.tsx",
+  import.meta.url,
+);
+const catalogImageRegistryUrl = new URL(
+  "../app/catalog-image-registry.ts",
+  import.meta.url,
+);
 const tabsUrl = new URL("../app/catalog-tabs.tsx", import.meta.url);
 const siteContentUrl = new URL("../app/site-content.ts", import.meta.url);
 const layoutUrl = new URL("../app/layout.tsx", import.meta.url);
@@ -42,6 +50,8 @@ test("technical page contains the core sales message and Hermes flow", async () 
   assert.match(page, /Prototipagem simples/);
   assert.match(page, /Producao sob medida/);
   assert.match(page, /Inserir numero do Hermes/);
+  assert.match(page, /CatalogImageUploader/);
+  assert.match(page, /catalogImageSlots/);
 });
 
 test("utilities page keeps the simple customer flow separate", async () => {
@@ -69,9 +79,31 @@ test("catalog tabs component exposes real tab semantics and keyboard navigation"
   assert.match(tabs, /ArrowLeft/);
   assert.match(tabs, /Home/);
   assert.match(tabs, /End/);
-  assert.match(tabs, /src=\{product\.image\}/);
+  assert.match(tabs, /imageOverrides\[getCatalogImageKey\(product\.image\)\]/);
+  assert.match(tabs, /product\.image/);
   assert.match(tabs, /Ver fonte/);
   assert.match(tabs, /<img/);
+  assert.match(tabs, /fetch\("\/product-images\/manifest\.json"/);
+});
+
+test("catalog image registry maps each product image to a stable slot", async () => {
+  const registry = await readFile(catalogImageRegistryUrl, "utf8");
+
+  assert.match(registry, /catalogImageSlots/);
+  assert.match(registry, /getCatalogUploadPath/);
+  assert.match(registry, /getCatalogImageKey/);
+  assert.match(registry, /flatMap/);
+  assert.match(registry, /assetKey/);
+});
+
+test("catalog image uploader exposes slot-based PNG upload flow", async () => {
+  const uploader = await readFile(uploaderUrl, "utf8");
+
+  assert.match(uploader, /Biblioteca de imagens/);
+  assert.match(uploader, /Slot do catálogo/);
+  assert.match(uploader, /x-catalog-upload-key/);
+  assert.match(uploader, /image\/png/);
+  assert.match(uploader, /Salvar imagem/);
 });
 
 test("site content module keeps the catalog copy centralized", async () => {

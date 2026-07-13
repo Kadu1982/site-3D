@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { getCatalogImageKey } from "./catalog-image-registry";
 
 type CatalogProduct = {
   description: string;
@@ -34,11 +35,39 @@ export function CatalogTabs({
   title,
 }: CatalogTabsProps) {
   const [activeTabId, setActiveTabId] = useState(tabs[0]?.id ?? "");
+  const [imageOverrides, setImageOverrides] = useState<Record<string, string>>({});
 
   const activeTab = useMemo(
     () => tabs.find((tab) => tab.id === activeTabId) ?? tabs[0],
     [activeTabId, tabs],
   );
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadManifest() {
+      try {
+        const response = await fetch("/product-images/manifest.json", {
+          cache: "no-store",
+        });
+        if (!response.ok) return;
+        const payload = (await response.json()) as Record<string, string>;
+        if (mounted) {
+          setImageOverrides(payload);
+        }
+      } catch {
+        if (mounted) {
+          setImageOverrides({});
+        }
+      }
+    }
+
+    void loadManifest();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   const focusTab = (index: number) => {
     const nextTab = tabs[index];
@@ -148,7 +177,9 @@ export function CatalogTabs({
                   <img
                     alt={product.title}
                     className="h-56 w-full object-cover"
-                    src={product.image}
+                    src={
+                      imageOverrides[getCatalogImageKey(product.image)] ?? product.image
+                    }
                   />
                 </a>
                 <div className="p-5">

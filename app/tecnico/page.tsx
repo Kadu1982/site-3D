@@ -1,3 +1,5 @@
+import { CatalogImageUploader } from "../catalog-image-uploader";
+import { catalogImageSlots } from "../catalog-image-registry";
 import { commercialSafetyNote, technicalStrengths } from "../site-content";
 
 export const metadata = {
@@ -126,6 +128,39 @@ export default function TecnicoPage() {
               Inserir numero do Hermes
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <CatalogImageUploader />
+          <article className="border border-[#dccfb9] bg-[#fbf7f0] p-6 shadow-[0_10px_28px_rgba(64,48,28,0.05)]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8a6428]">
+              Slots reconhecidos
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold text-[#201915]">
+              Nome do arquivo e destino precisam bater
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-[#5e5144]">
+              O upload salva o PNG no mesmo caminho usado pelo catálogo. Se você
+              substituir um arquivo do slot certo, o produto muda no lugar correto
+              sem reescrever o catálogo inteiro.
+            </p>
+            <div className="mt-6 max-h-[540px] space-y-3 overflow-auto pr-2">
+              {catalogImageSlots.map((slot) => (
+                <div
+                  key={slot.assetKey}
+                  className="border border-[#dccfb9] bg-white p-4 text-sm text-[#4d4033]"
+                >
+                  <p className="font-semibold text-[#201915]">{slot.productTitle}</p>
+                  <p>{slot.categoryLabel}</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#8a6428]">
+                    {slot.defaultPath}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
     </main>
