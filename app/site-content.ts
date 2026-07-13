@@ -39,19 +39,28 @@ export const catalogTabs = [
       "Sapateiras, caixas modulares, organizadores de gaveta e solucoes de mesa com leitura imediata para o comprador.",
     products: [
       {
-        title: "Sapateira modular ajustavel",
+        title: "Sapateira Modular",
         description:
-          "Peca modular com argumento de tamanho, utilidade e customizacao.",
+          "Estrutura expansivel com leitura clara de capacidade e uso cotidiano.",
+        image: "/product-images/casa-sapateira-modular.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/1454057-modular-shoe-rack-customizable-width-height?from=search#profileId-1515120",
       },
       {
-        title: "Suporte para tiaras e acessorios",
+        title: "Insertos para Gavetas IKEA Alex",
         description:
-          "Categoria simples de explicar, facil de fotografar e boa para presente.",
+          "Organizacao modular que funciona muito bem como venda por sistema.",
+        image: "/product-images/casa-ikea-alex-inserts.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/930826-ikea-alex-drawer-inserts-7-pieces?from=search#profileId-894722",
       },
       {
-        title: "Organizador de gaveta modular",
+        title: "Suporte para Tiaras",
         description:
-          "Boa opcao para linha de organizacao com venda por kit e modulo.",
+          "Produto leve, visual e com apelo forte de utilidade e presente.",
+        image: "/product-images/casa-headband-holder.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/2525438-headband-organizer?from=search#profileId-2778756",
       },
     ],
   },
@@ -64,19 +73,28 @@ export const catalogTabs = [
       "Comedouros elevados, bebedouros, pecas para passeio, tosa e suporte pensados para rotina de tutor.",
     products: [
       {
-        title: "Comedouro elevado para pets",
+        title: "Comedouro Elevado Olive Arc",
         description:
-          "Produto funcional com leitura clara de beneficio e boa percepcao de valor.",
+          "Categoria de compra recorrente com leitura imediata de conforto e utilidade.",
+        image: "/product-images/pets-olive-arc-pet-feeder.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/1869920-olive-arc-elevated-pet-feeder?from=search#profileId-2001361",
       },
       {
-        title: "Organizador de tosa pet",
+        title: "Suporte Modular Elevado",
         description:
-          "Nicho util para tutores e banho e tosa, com apelo pratico imediato.",
+          "Boa peca para mostrar personalizacao e venda por ajuste de tamanho.",
+        image: "/product-images/pets-modular-dog-bowl-stand.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/2605225-modular-elevated-dog-bowl-stand-parametric?from=search#profileId-2874869",
       },
       {
-        title: "Porta-sacos para passeio",
+        title: "Capsula Porta-Saco Eco Paw",
         description:
-          "Item pequeno, utilitario e facil de vender em pacote com outros itens pet.",
+          "Item pequeno e utilitario para complementar kits de passeio.",
+        image: "/product-images/pets-eco-paw-bag-capsule.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/1387387-eco-paw-bag-capsule?from=search#profileId-1437056",
       },
     ],
   },
@@ -89,19 +107,28 @@ export const catalogTabs = [
       "Luminarias, tronos, torres e pecas tematicas para transformar uma pagina comum em catalogo de desejo.",
     products: [
       {
-        title: "Luminaria fantasia com torre",
+        title: "Luminaria Dragao",
         description:
-          "Peca de destaque para banner, vitrine e colecao tematica sem depender de copy longa.",
+          "Visual forte para campanha de vitrine e peca com apelo emocional imediato.",
+        image: "/product-images/fantasia-dragon-lamp.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/2485804-dragon-lamp-guardian-of-the-ruined-tower?from=search#profileId-2730824",
       },
       {
-        title: "Porta-copos tematico",
+        title: "Torre de Mago Flutuante",
         description:
-          "Item pequeno, colecionavel e ideal para venda cruzada por cor ou colecao.",
+          "Produto cenografico com leitura de magia, luz e colecao tematica.",
+        image: "/product-images/fantasia-floating-mage-tower.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/860721-floating-mage-tower-magnetic-levitation-light?from=search#profileId-810954",
       },
       {
-        title: "Torre decorativa",
+        title: "Trono de Ferro com dragao",
         description:
-          "Produto visual com boa presenca para pagina inicial e campanhas sazonais.",
+          "Peca de destaque para fas de fantasia e produtos de exibicao.",
+        image: "/product-images/fantasia-iron-throne.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/1490571-iron-throne-with-dragon?from=search#profileId-1557840",
       },
     ],
   },
@@ -114,19 +141,28 @@ export const catalogTabs = [
       "Suportes de controle, headset, porta-copos e organizadores para mesa de trabalho ou jogo.",
     products: [
       {
-        title: "Suporte para controle",
+        title: "Suporte de Mesa Universal",
         description:
-          "Bom para demonstrar praticidade e apelo visual em setup de mesa.",
+          "Produto com forte leitura de setup e valor claro para mesa ou game room.",
+        image: "/product-images/mesa-controller-headset-stand.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/1853686-universal-controller-headset-desk-stand?from=search#profileId-1981891",
       },
       {
-        title: "Base para headset",
+        title: "Suporte de Controle Cristal",
         description:
-          "Produto de ticket medio e alta clareza de uso em escritorio ou setup gamer.",
+          "Boa peca para vender como item de mesa e colecao tematica.",
+        image: "/product-images/mesa-crystal-controller-holder.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/570297-crystal-xbox-one-controller-holder?from=search#profileId-490175",
       },
       {
-        title: "Organizador de mesa para cabos",
+        title: "Suporte de Headset Hollow Knight",
         description:
-          "Ajuda a completar a colecao com item de utilidade e venda por kit.",
+          "Opcao de nicho que vende bem quando a pagina tem identidade de fandom.",
+        image: "/product-images/mesa-hollow-knight-headset-stand.png",
+        sourceUrl:
+          "https://makerworld.com/pt/models/2323327-hollow-knight-headset-stand?from=search#profileId-2537486",
       },
     ],
   },

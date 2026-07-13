@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 
 type CatalogProduct = {
   description: string;
+  image: string;
+  sourceUrl: string;
   title: string;
 };
 
@@ -140,14 +142,34 @@ export function CatalogTabs({
             {activeTab.products.map((product) => (
               <article
                 key={product.title}
-                className="border border-[#dccfb9] bg-white p-5 shadow-[0_10px_28px_rgba(64,48,28,0.05)]"
+                className="overflow-hidden border border-[#dccfb9] bg-white shadow-[0_10px_28px_rgba(64,48,28,0.05)]"
               >
-                <h4 className="text-lg font-semibold text-[#201915]">
-                  {product.title}
-                </h4>
-                <p className="mt-3 text-sm leading-6 text-[#5e5144]">
-                  {product.description}
-                </p>
+                <a href={product.sourceUrl} target="_blank" rel="noreferrer">
+                  <img
+                    alt={product.title}
+                    className="h-56 w-full object-cover"
+                    src={product.image}
+                  />
+                </a>
+                <div className="p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8a6428]">
+                    {activeTab.eyebrow}
+                  </p>
+                  <h4 className="mt-3 text-lg font-semibold text-[#201915]">
+                    {product.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-6 text-[#5e5144]">
+                    {product.description}
+                  </p>
+                  <a
+                    href={product.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex text-xs font-bold uppercase tracking-[0.18em] text-[#8a6428] transition hover:text-[#c99a4a]"
+                  >
+                    Ver fonte
+                  </a>
+                </div>
               </article>
             ))}
           </div>
