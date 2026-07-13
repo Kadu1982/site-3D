@@ -1,281 +1,188 @@
-import Image from "next/image";
-
-const businessSegments = [
-  {
-    title: "Indústrias e empresas",
-    text: "Protótipos, peças técnicas, suportes, gabaritos, reposições e soluções sob medida para operação, teste e apresentação.",
-  },
-  {
-    title: "Construtoras e arquitetura",
-    text: "Maquetes físicas em impressão 3D para estudos, apresentações comerciais e materialização de projetos.",
-  },
-  {
-    title: "Público geral",
-    text: "Modelos prontos e personalizados para decoração, linha pet, gamer, culinária, fotografia, convites e lembranças.",
-  },
-];
-
-const productLines = [
-  "Vasos e decoração",
-  "Luminárias",
-  "Utensílios",
-  "Linha pet",
-  "Gamer",
-  "Culinária",
-  "Fotografia",
-  "Convites e lembranças",
-  "Prototipagem",
-  "Maquetes",
-];
-
-const materialLines = [
-  "PLA",
-  "PLA Silk",
-  "PETG",
-  "ABS",
-  "ASA",
-  "TPU",
-  "Nylon / PA",
-  "Policarbonato / PC",
-  "PETG-CF",
-  "PA-CF",
-  "Filamentos com fibra de carbono",
-  "Filamentos técnicos sob consulta",
-];
-
-const processSteps = [
-  "Envie a ideia, medida, referência ou arquivo 3D para o Hermes.",
-  "A Archon confirma viabilidade de impressão, material disponível, prazo e acabamento solicitado.",
-  "A entrega é combinada conforme destino, tamanho, peso, urgência e modalidade de envio.",
-];
-
-const scopeRules = [
-  "Quando o cliente fornece o arquivo 3D, desenho técnico ou modelo digital, a Archon atua na preparação, fatiamento e execução da impressão.",
-  "A definição de material, requisitos mecânicos, dimensionamento, cálculo de esforço, encaixes críticos e aplicação final é responsabilidade do cliente ou do responsável técnico pelo projeto.",
-  "Quando houver necessidade de projeto técnico, laudo, ART ou responsabilidade profissional formal, esse escopo deverá ser tratado previamente com profissional habilitado.",
-];
+import {
+  commercialSafetyNote,
+  featuredCollections,
+  featuredProducts,
+  orderFlow,
+} from "./site-content";
 
 export const metadata = {
-  title: "Archon | Impressão 3D, prototipagem e maquetes em Bauru-SP",
+  title: "Archon | Cat\u00e1logo de Impress\u00e3o 3D",
   description:
-    "Impressão 3D para indústrias, empresas, construtoras e público geral. Pedidos e orçamentos atendidos pelo Agente Hermes no WhatsApp.",
+    "Molde de site para vender produtos de impress\u00e3o 3D com cole\u00e7\u00f5es, cat\u00e1logo e chamadas comerciais claras.",
 };
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#070707] text-[#f3efe6]">
-      <section className="relative overflow-hidden border-b border-[#c99a4a]/25">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(201,154,74,0.2),transparent_34%),linear-gradient(115deg,rgba(255,255,255,0.05),transparent_42%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-10 lg:py-14">
-          <header className="flex items-center justify-between gap-4 lg:col-span-2">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(201,154,74,0.14),_transparent_30%),linear-gradient(180deg,#070707_0%,#0c0c0c_42%,#090909_100%)] text-[#f3efe6]">
+      <section className="relative overflow-hidden border-b border-[#c99a4a]/20">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: "url('/archon-brand-preview.png')" }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,7,7,0.98)_0%,rgba(7,7,7,0.88)_42%,rgba(7,7,7,0.52)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">
+          <header className="flex items-center justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.42em] text-[#c99a4a]">
                 Archon
               </p>
               <p className="mt-2 text-sm text-[#bdb5a7]">
-                Impressão 3D • Prototipagem • Soluções criativas
+                Catalogo de impressao 3D • vitrines de produto • molde reutilizavel
               </p>
             </div>
             <a
-              className="hidden border border-[#c99a4a]/60 px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#f6d38b] transition hover:bg-[#c99a4a] hover:text-[#080808] sm:inline-flex"
-              href="#pedido"
+              href="/utilidades"
+              className="hidden border border-[#c99a4a]/60 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-[#f0c46d] transition hover:bg-[#c99a4a] hover:text-[#090909] sm:inline-flex"
             >
-              Pedir orçamento
+                Ver colecao pronta
             </a>
           </header>
 
-          <div className="flex flex-col justify-center py-8 lg:py-16">
-            <p className="mb-5 max-w-xl text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-              Toda Criação Tem Uma Origem
-            </p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-              Ideias, protótipos e produtos físicos em impressão 3D.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d7d0c2]">
-              De Bauru-SP para clientes em todo o Brasil, a Archon transforma
-              arquivos, referências e projetos em peças impressas em 3D. Quando
-              a logística permitir, também atendemos demandas internacionais.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                className="bg-[#c99a4a] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#090909] transition hover:bg-[#f0c46d]"
-                href="#pedido"
-              >
-                Falar com o Hermes
-              </a>
-              <a
-                className="border border-white/18 px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:border-[#c99a4a] hover:text-[#f0c46d]"
-                href="#linhas"
-              >
-                Ver possibilidades
-              </a>
+          <div className="grid min-h-[620px] items-center gap-10 py-14 lg:grid-cols-[0.98fr_1.02fr]">
+            <div>
+              <p className="text-sm uppercase tracking-[0.34em] text-[#c99a4a]">
+                Toda criacao tem uma origem
+              </p>
+              <h1 className="mt-5 max-w-2xl text-4xl font-semibold leading-[1.02] text-white sm:text-6xl">
+                Catalogo de impressao 3D pronto para vender.
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-[#d7d0c2]">
+                Este projeto virou um molde: colecoes, cards e chamadas ja ficam organizados para voce publicar produtos de casa, pets, decoracao e setup sem refazer a estrutura toda vez.
+              </p>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <a
+                  href="/utilidades"
+                  className="bg-[#c99a4a] px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#090909] transition hover:bg-[#f0c46d]"
+                >
+                  Ver utilidades
+                </a>
+                <a
+                  href="/tecnico"
+                  className="border border-white/16 px-6 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:border-[#c99a4a] hover:text-[#f0c46d]"
+                >
+                  Ver linha tecnica
+                </a>
+              </div>
+              <p className="mt-6 max-w-xl text-sm leading-6 text-[#a99f8e]">
+                {commercialSafetyNote}
+              </p>
             </div>
-          </div>
 
-          <div className="relative min-h-[380px] overflow-hidden border border-[#c99a4a]/25 bg-[#080807] shadow-2xl shadow-black/60 sm:min-h-[520px]">
-            <Image
-              src="/archon-brand-preview.png"
-              alt="Visualização da marca Archon com símbolo arquitetônico, compasso e camadas de impressão 3D"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 54vw"
-              className="object-contain p-4 sm:p-6"
-            />
+            <div className="grid gap-4 sm:grid-cols-2">
+              {featuredCollections.map((collection) => (
+                <article
+                  key={collection.title}
+                  className="border border-white/10 bg-white/[0.04] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.25)] backdrop-blur-[1px]"
+                >
+                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#c99a4a]">
+                    {collection.eyebrow}
+                  </p>
+                  <h2 className="mt-3 text-xl font-semibold text-white">
+                    {collection.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-6 text-[#d7d0c2]">
+                    {collection.summary}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {collection.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="border border-[#c99a4a]/18 bg-black/25 px-3 py-1.5 text-xs font-semibold text-[#eadfc9]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-5 px-5 py-14 sm:px-8 md:grid-cols-3 lg:px-10">
-        {businessSegments.map((segment) => (
-          <article
-            key={segment.title}
-            className="border border-white/10 bg-white/[0.035] p-6"
-          >
-            <h2 className="text-xl font-semibold text-white">
-              {segment.title}
+      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.34em] text-[#c99a4a]">
+              O que entra no catalogo
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
+              Produto claro vende. Categoria clara vende mais rapido.
             </h2>
-            <p className="mt-4 leading-7 text-[#cfc7b7]">{segment.text}</p>
-          </article>
-        ))}
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+            {featuredProducts.map((product) => (
+              <article
+                key={product.title}
+                className="border border-[#c99a4a]/18 bg-[#11100e] p-4"
+              >
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#c99a4a]">
+                  {product.category}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-white">
+                  {product.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#d8cfbd]">
+                  {product.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <section
-        id="linhas"
-        className="border-y border-white/10 bg-[#11100e] px-5 py-16 sm:px-8 lg:px-10"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <p className="text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-                O que podemos fazer
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
-                Do técnico ao cotidiano, uma impressão para cada origem.
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {productLines.map((line) => (
-                <div
-                  key={line}
-                  className="border border-[#c99a4a]/20 bg-black/30 px-4 py-4 text-sm font-semibold text-[#eadfc9]"
-                >
-                  {line}
-                </div>
-              ))}
-            </div>
+      <section className="border-y border-white/10 bg-[#11100e] px-5 py-16 sm:px-8 lg:px-10">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.34em] text-[#c99a4a]">
+              Como vender
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
+              Um fluxo curto para montar paginas de produto sem retrabalho.
+            </h2>
+          </div>
+          <div className="grid gap-4">
+            {orderFlow.map((step, index) => (
+              <div
+                key={step}
+                className="flex gap-4 border border-[#c99a4a]/18 bg-black/25 p-5"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#c99a4a] text-sm font-bold text-[#f0c46d]">
+                  {index + 1}
+                </span>
+                <p className="pt-1 leading-7 text-[#ded4c1]">{step}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_1fr] lg:px-10">
         <div>
-          <p className="text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-            Materiais
+          <p className="text-sm uppercase tracking-[0.34em] text-[#c99a4a]">
+            Proximo uso
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
-            Filamentos comuns e técnicos para diferentes tipos de impressão.
+            O molde ja deixa claro o que muda e o que fica fixo.
           </h2>
           <p className="mt-6 text-lg leading-8 text-[#d7d0c2]">
-            A disponibilidade pode variar conforme estoque, fornecedor, cor,
-            diâmetro, aplicação e parâmetros de impressão. A Archon informa as
-            possibilidades de execução, mas a especificação técnica do material
-            para uso crítico deve vir do cliente ou do responsável pelo projeto.
+            Voce so troca os produtos, as fotos e as cores de campanha. A arquitetura do site continua a mesma, o que acelera novas colecoes e reduz bagunca editorial.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {materialLines.map((material) => (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {featuredCollections.map((collection) => (
             <div
-              key={material}
-              className="border border-white/10 bg-white/[0.035] px-4 py-4 text-sm font-semibold text-[#eadfc9]"
+              key={collection.eyebrow}
+              className="border border-white/10 bg-white/[0.035] px-4 py-5"
             >
-              {material}
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#c99a4a]">
+                {collection.eyebrow}
+              </p>
+              <p className="mt-3 text-sm leading-6 text-[#eadfc9]">
+                {collection.summary}
+              </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-[#0d0c0b] px-5 py-16 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="text-sm uppercase tracking-[0.32em] text-[#c99a4a]">
-              Escopo de atuação
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">
-              Bureau de impressão 3D com responsabilidade delimitada.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-[#d7d0c2]">
-              A Archon executa manufatura aditiva a partir de arquivos, desenhos
-              e especificações fornecidos pelo cliente. O serviço é de
-              fabricação da peça física, não de consultoria técnica, cálculo de
-              engenharia ou validação da aplicação final.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {scopeRules.map((rule, index) => (
-              <div
-                key={rule}
-                className="flex gap-4 border border-[#c99a4a]/20 bg-black/25 p-5"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#c99a4a] text-sm font-bold text-[#f0c46d]">
-                  {index + 1}
-                </span>
-                <p className="m-0 leading-7 text-[#d8cfbd]">{rule}</p>
-              </div>
-            ))}
-            <p className="text-sm leading-6 text-[#a99f8e]">
-              Observação: serviços que envolvam engenharia, projeto técnico,
-              cálculo estrutural, laudo, certificação, ART ou responsabilidade
-              profissional formal não fazem parte do escopo padrão de impressão
-              3D e devem ser contratados com profissional habilitado, quando
-              aplicável.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="pedido"
-        className="bg-[#c99a4a] px-5 py-16 text-[#090909] sm:px-8 lg:px-10"
-      >
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr]">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.32em]">
-              Pedidos com Hermes
-            </p>
-            <h2 className="mt-4 text-3xl font-black sm:text-5xl">
-              O Agente Hermes cuida do primeiro atendimento no WhatsApp.
-            </h2>
-            <p className="mt-6 text-lg leading-8">
-              O cliente envia a ideia, referência ou arquivo. O Hermes organiza
-              o pedido para a Archon confirmar viabilidade de impressão,
-              material disponível, prazo, acabamento solicitado e forma de
-              entrega.
-            </p>
-          </div>
-          <div className="bg-[#090909] p-6 text-[#f3efe6]">
-            <ol className="space-y-4">
-              {processSteps.map((step, index) => (
-                <li key={step} className="flex gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-[#c99a4a] text-sm font-bold text-[#f0c46d]">
-                    {index + 1}
-                  </span>
-                  <span className="pt-1 leading-7 text-[#ded4c1]">{step}</span>
-                </li>
-              ))}
-            </ol>
-            <a
-              className="mt-8 block border border-[#c99a4a] px-5 py-4 text-center text-sm font-bold uppercase tracking-[0.18em] text-[#f0c46d] transition hover:bg-[#c99a4a] hover:text-[#090909]"
-              href="https://wa.me/"
-            >
-              Inserir número do Hermes
-            </a>
-            <p className="mt-4 text-sm leading-6 text-[#a99f8e]">
-              Atendimento em Bauru-SP, em todo o Brasil e, quando viável, também
-              para demandas internacionais. Entregas são combinadas caso a caso,
-              porque custos dos Correios, transportadoras e envios internacionais
-              variam conforme destino, tamanho, peso e urgência.
-            </p>
-          </div>
         </div>
       </section>
     </main>

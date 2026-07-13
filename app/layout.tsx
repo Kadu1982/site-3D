@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
+const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Archon | Impressão 3D em Bauru-SP",
+  title: "Archon | Cat\u00e1logo de Impress\u00e3o 3D",
   description:
-    "Impressão 3D, prototipagem, maquetes e soluções criativas com atendimento pelo Agente Hermes no WhatsApp.",
+    "Molde de site para vender produtos de impress\u00e3o 3D com cole\u00e7\u00f5es, cat\u00e1logo e chamadas comerciais claras.",
   openGraph: {
-    title: "Archon | Toda Criação Tem Uma Origem",
+    title: "Archon | Cat\u00e1logo de Impress\u00e3o 3D",
     description:
-      "Impressão 3D, prototipagem, maquetes e soluções criativas em Bauru-SP.",
+      "Molde de site para vender produtos de impress\u00e3o 3D com cole\u00e7\u00f5es, cat\u00e1logo e chamadas comerciais claras.",
     images: ["/archon-brand-preview.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archon | Toda Criação Tem Uma Origem",
+    title: "Archon | Cat\u00e1logo de Impress\u00e3o 3D",
     description:
-      "Impressão 3D, prototipagem, maquetes e soluções criativas em Bauru-SP.",
+      "Molde de site para vender produtos de impress\u00e3o 3D com cole\u00e7\u00f5es, cat\u00e1logo e chamadas comerciais claras.",
     images: ["/archon-brand-preview.png"],
   },
   icons: {
@@ -43,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} antialiased`}
       >
         {children}
       </body>
